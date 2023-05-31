@@ -23,7 +23,7 @@ const Featured = () => {
                 <>
                     {data.map((item, i) => {
                         return (
-                            <div className="featuredItem">
+                            <div className="featuredItem" key={i}>
                                 <img
                                     src={images[i]}
                                     alt=""

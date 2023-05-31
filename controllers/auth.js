@@ -9,8 +9,7 @@ export const register = async (req, res, next) => {
 
     try {
         const newUser = new User({
-            username: req.body.username,
-            email: req.body.email,
+            ...req.body,
             password: hashedpass,
         });
         const savedUser = await newUser.save();
@@ -43,7 +42,7 @@ export const login = async (req, res, next) => {
             httpOnly: true,
         })
             .status(200)
-            .json(otherdetails);
+            .json({...otherdetails, isAdmin});
     } catch (err) {
         next(err);
     }

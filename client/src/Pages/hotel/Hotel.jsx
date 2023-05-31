@@ -16,6 +16,7 @@ import useFetch from "../../Hooks/useFetch";
 import Loading from "../../Components/loading/Loading";
 import { SearchContext } from "../../Context/SearchContext";
 import { AuthContext } from "../../Context/AuthContext";
+import Reserve from "../../Components/reserve/Reserve";
 
 function Hotel() {
     const [slideNumber, setSlideNumber] = useState(0);
@@ -153,6 +154,7 @@ function Hotel() {
                     <Footer />
                 </div>
             )}
+            {openModel && <Reserve setOpen={setOpenModel} hotelId = {id} />}
         </div>
     );
 }
