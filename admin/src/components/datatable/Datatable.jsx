@@ -10,7 +10,7 @@ const Datatable = ({columns}) => {
   const location = useLocation();
   const path = location.pathname.split('/')[1];
   let fetchpath = path;
-  if(path == 'hotels'){
+  if(path === 'hotels'){
     fetchpath = fetchpath+"?city="; 
   }
   const {data, loading, error} = useFetch(`/${fetchpath}`);
